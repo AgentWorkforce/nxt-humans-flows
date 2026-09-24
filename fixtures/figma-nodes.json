@@ -1,0 +1,94 @@
+{
+  "name": "NXT Email Library — Campaigns",
+  "nodes": {
+    "12:34": {
+      "document": {
+        "id": "12:34", "name": "2026-10 Fall launch", "type": "FRAME",
+        "absoluteBoundingBox": { "x": 0, "y": 0, "width": 600, "height": 1800 },
+        "children": [
+          {
+            "id": "12:35", "name": "Meta", "type": "INSTANCE", "componentId": "1:10",
+            "absoluteBoundingBox": { "x": 0, "y": -80, "width": 600, "height": 60 },
+            "componentProperties": {
+              "Subject#1:0": { "type": "TEXT", "value": "Meet the fall lineup" },
+              "Preheader#1:1": { "type": "TEXT", "value": "Three new ways to work together, live today." }
+            },
+            "children": []
+          },
+          {
+            "id": "12:36", "name": "Header", "type": "INSTANCE", "componentId": "1:20",
+            "absoluteBoundingBox": { "x": 0, "y": 0, "width": 600, "height": 80 },
+            "componentProperties": {
+              "Logo alt#2:0": { "type": "TEXT", "value": "NXT Humans" },
+              "Link#2:1": { "type": "TEXT", "value": "https://nxthumans.example.com" }
+            },
+            "children": [
+              { "id": "I12:36;2:5", "name": "Logo", "type": "RECTANGLE", "fills": [{ "type": "IMAGE", "imageRef": "ref-logo" }] }
+            ]
+          },
+          {
+            "id": "12:37", "name": "Hero", "type": "INSTANCE", "componentId": "1:31",
+            "absoluteBoundingBox": { "x": 0, "y": 80, "width": 600, "height": 620 },
+            "componentProperties": {
+              "Image alt#3:0": { "type": "TEXT", "value": "Three teammates planning around a whiteboard" },
+              "Headline#3:1": { "type": "TEXT", "value": "Work moves faster together" },
+              "Body#3:2": { "type": "TEXT", "value": "Shared boards, live handoffs and a calmer inbox — all in this fall's release." },
+              "CTA label#3:3": { "type": "TEXT", "value": "See what's new" },
+              "CTA URL#3:4": { "type": "TEXT", "value": "https://nxthumans.example.com/fall" },
+              "Show Body#3:5": { "type": "BOOLEAN", "value": true },
+              "Theme": { "type": "VARIANT", "value": "Light" }
+            },
+            "children": [
+              { "id": "I12:37;3:9", "name": "Image", "type": "RECTANGLE", "fills": [{ "type": "IMAGE", "imageRef": "ref-hero" }] },
+              { "id": "I12:37;3:10", "name": "Headline", "type": "TEXT", "characters": "Work moves faster together" }
+            ]
+          },
+          {
+            "id": "12:40", "name": "Feature — boards", "type": "FRAME",
+            "absoluteBoundingBox": { "x": 0, "y": 700, "width": 600, "height": 260 },
+            "children": [
+              { "id": "12:41", "name": "Title", "type": "TEXT", "characters": "Shared boards" },
+              { "id": "12:42", "name": "Copy", "type": "TEXT", "characters": "Plan the quarter on one board your whole team can edit, comment on and follow." },
+              { "id": "12:43", "name": "Link", "type": "TEXT", "characters": "Try shared boards", "style": { "hyperlink": { "type": "URL", "url": "https://nxthumans.example.com/boards" } } },
+              { "id": "12:44", "name": "Old badge", "type": "TEXT", "characters": "BETA", "visible": false }
+            ]
+          },
+          {
+            "id": "12:45", "name": "Divider", "type": "INSTANCE", "componentId": "1:40",
+            "absoluteBoundingBox": { "x": 0, "y": 960, "width": 600, "height": 24 },
+            "children": []
+          },
+          {
+            "id": "12:46", "name": "P.S.", "type": "TEXT",
+            "absoluteBoundingBox": { "x": 0, "y": 990, "width": 600, "height": 60 },
+            "characters": "P.S. Existing workspaces get the update automatically this week."
+          },
+          {
+            "id": "12:47", "name": "Footer", "type": "INSTANCE", "componentId": "1:50",
+            "absoluteBoundingBox": { "x": 0, "y": 1100, "width": 600, "height": 120 },
+            "componentProperties": {
+              "Company#5:0": { "type": "TEXT", "value": "NXT Humans, Inc." },
+              "Address#5:1": { "type": "TEXT", "value": "100 Market St, San Francisco, CA 94105" }
+            },
+            "children": []
+          },
+          {
+            "id": "12:48", "name": "Designer notes", "type": "TEXT", "visible": false,
+            "absoluteBoundingBox": { "x": 700, "y": 0, "width": 200, "height": 60 },
+            "characters": "Swap hero photo before send"
+          }
+        ]
+      },
+      "components": {
+        "1:10": { "name": "Email/Meta" },
+        "1:20": { "name": "Email/Header" },
+        "1:31": { "name": "Theme=Light", "componentSetId": "1:30" },
+        "1:40": { "name": "Email/Divider" },
+        "1:50": { "name": "Email/Footer" }
+      },
+      "componentSets": {
+        "1:30": { "name": "Email/Hero" }
+      }
+    }
+  }
+}

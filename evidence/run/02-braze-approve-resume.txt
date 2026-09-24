@@ -1,0 +1,22 @@
+npm notice run npx
+npm notice run 'flows' answer --data-dir .relayflowd 01M3883H1ETQ7J29FRPB5VFMMJ human-4 yes --by will
+ANSWERED 01M3883H1ETQ7J29FRPB5VFMMJ human-4 yes
+Continue with: flows resume --data-dir .relayflowd --local-agent 01M3883H1ETQ7J29FRPB5VFMMJ
+exit 0
+npm notice run npx
+npm notice run 'flows' resume --data-dir .relayflowd --local-agent 01M3883H1ETQ7J29FRPB5VFMMJ
+○ run-1 (deterministic) 0.00s
+✓ run-1 (deterministic) 0.01s completionReason: success
+○ llm-2 (llm) 0.00s
+✓ llm-2 (llm) 4.14s completionReason: success
+○ run-3 (deterministic) 0.00s
+✓ run-3 (deterministic) 0.01s completionReason: success
+○ human-4 (deterministic) 0.00s
+✓ human-4 (deterministic) 0.02s completionReason: success
+○ run-5 (deterministic) 0.00s
+✓ run-5 (deterministic) 0.23s completionReason: success
+○ run-6 (deterministic) 0.00s
+✓ run-6 (deterministic) 0.01s completionReason: success
+RUN 01M3883H1ETQ7J29FRPB5VFMMJ completed (7 steps) completionReason: success
+Observer: https://agentrelay.com/observer?key=ot_live_<redacted>
+exit 0

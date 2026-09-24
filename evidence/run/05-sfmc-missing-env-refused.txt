@@ -1,0 +1,12 @@
+npm notice run npx
+npm notice run 'flows' run figma-to-email.flow.ts --local-agent --no-observer-link --input {"figmaFileKey":"FALLKEY","figmaNodeId":"12-34","name":"2026-10 Fall launch","target":"sfmc","imageBaseUrl":"https://cdn.nxthumans.example.com/email/fall","reviewer":"will"}
+○ run-1 (deterministic) 0.00s
+✗ run-1 (deterministic) 0.22s
+FAILED [step_failed] journal step "run-1" completed with retries_exhausted Step "run-1" (deterministic) completionReason: retries_exhausted attempt=1/1 exit=1.
+Stderr (captured excerpt):
+missing environment: SFMC_AUTH_URL, SFMC_CLIENT_ID, SFMC_CLIENT_SECRET
+
+Inspect: flows replay 01M38886ZNJGNXG0QZWWBXMMSD --at run-1
+Journal: .relayflowd/runs/01M38886ZNJGNXG0QZWWBXMMSD.sqlite3
+RUN 01M38886ZNJGNXG0QZWWBXMMSD failed completionReason: step_failed
+exit 1

@@ -1,0 +1,44 @@
+npm notice run npx
+npm notice run 'flows' run figma-to-email.flow.ts --local-agent --input {"figmaFileKey":"FALLKEY","figmaNodeId":"12-34","name":"2026-10 Fall launch","target":"sfmc","imageBaseUrl":"https://cdn.nxthumans.example.com/email/fall","reviewer":"will"}
+○ run-1 (deterministic) 0.00s
+✓ run-1 (deterministic) 0.25s completionReason: success
+○ llm-2 (llm) 0.00s
+WAITING [worker_lease] Run "01M38853YEDTQ3M20WYAYTC89C" step "llm-2" (llm) is running under a worker lease until 1790204642563.
+↻ llm-2 (llm) 3.77s
+✓ llm-2 (llm) 8.90s completionReason: success
+○ run-3 (deterministic) 0.00s
+✓ run-3 (deterministic) 0.51s completionReason: success
+○ human-4 (deterministic) 0.00s
+⏸ human-4 (human) 0.00s
+PARKED [run_parked] Run "01M388500XMH4SG1H1X8JF6T9H" is waiting for will to answer human-4: "Email \"2026-10 Fall launch\" from Figma frame \"2026-10 Fall launch\" is ready for sfmc.\nSubject: Meet the fall lineup\nPreheader: Three new ways to work together, live today.\n8 blocks: 4 from library components, 4 mapped by the model from non-library layers. 8KB HTML.\nPreview: /Users/will/Projects/AgentWorkforce/nxt-humans-flows/out/2026-10-fall-launch/email.html (plain text: email.txt, blocks: spec.json).\nUpload /Users/will/Projects/AgentWorkforce/nxt-humans-flows/out/2026-10-fall-launch/images/ (2 file(s)) to https://cdn.nxthumans.example.com/email/fall before sending.\nDeploy it to sfmc?"
+Answer with: flows answer --data-dir .relayflowd 01M388500XMH4SG1H1X8JF6T9H human-4 yes|no
+Then continue with: flows resume --data-dir .relayflowd --local-agent 01M388500XMH4SG1H1X8JF6T9H
+RUN 01M388500XMH4SG1H1X8JF6T9H parked
+Observer: https://agentrelay.com/observer?key=ot_live_<redacted>
+exit 3
+npm notice run npx
+npm notice run 'flows' answer --data-dir .relayflowd 01M388500XMH4SG1H1X8JF6T9H human-4 yes --by will
+ANSWERED 01M388500XMH4SG1H1X8JF6T9H human-4 yes
+Continue with: flows resume --data-dir .relayflowd --local-agent 01M388500XMH4SG1H1X8JF6T9H
+exit 0
+npm notice run npx
+npm notice run 'flows' resume --data-dir .relayflowd --local-agent 01M388500XMH4SG1H1X8JF6T9H
+○ run-1 (deterministic) 0.00s
+✓ run-1 (deterministic) 0.01s completionReason: success
+○ llm-2 (llm) 0.00s
+✓ llm-2 (llm) 3.53s completionReason: success
+○ run-3 (deterministic) 0.00s
+✓ run-3 (deterministic) 0.01s completionReason: success
+○ human-4 (deterministic) 0.00s
+✓ human-4 (deterministic) 0.02s completionReason: success
+○ run-5 (deterministic) 0.00s
+✗ run-5 (deterministic) 0.17s
+FAILED [step_failed] journal step "run-5" completed with retries_exhausted Step "run-5" (deterministic) completionReason: retries_exhausted attempt=1/1 exit=1.
+Stderr (captured excerpt):
+missing environment: SFMC_AUTH_URL, SFMC_CLIENT_ID, SFMC_CLIENT_SECRET
+
+Inspect: flows replay 01M3885E7NB2HGZSQB6A5HYF38 --at run-5
+Journal: .relayflowd/runs/01M3885E7NB2HGZSQB6A5HYF38.sqlite3
+RUN 01M3885E7NB2HGZSQB6A5HYF38 failed completionReason: step_failed
+Observer: https://agentrelay.com/observer?key=ot_live_<redacted>
+exit 1

@@ -1,0 +1,39 @@
+npm notice run npx
+npm notice run 'flows' run figma-to-email.flow.ts --local-agent --no-observer-link --input {"figmaFileKey":"FALLKEY","figmaNodeId":"12-34","name":"2026-10 Fall launch","target":"braze","imageBaseUrl":"https://cdn.nxthumans.example.com/email/fall","reviewer":"will"}
+○ run-1 (deterministic) 0.00s
+✓ run-1 (deterministic) 0.15s completionReason: success
+○ run-2 (deterministic) 0.00s
+✓ run-2 (deterministic) 0.24s completionReason: success
+○ llm-3 (llm) 0.00s
+WAITING [worker_lease] Run "01M388A6VNPDCEJGP1FGATE2N9" step "llm-3" (llm) is running under a worker lease until 1790204809387.
+↻ llm-3 (llm) 3.64s
+✓ llm-3 (llm) 9.32s completionReason: success
+○ run-4 (deterministic) 0.00s
+✓ run-4 (deterministic) 0.45s completionReason: success
+○ human-5 (deterministic) 0.00s
+⏸ human-5 (human) 0.00s
+PARKED [run_parked] Run "01M388A2XFCSV169DGFRAARQ3P" is waiting for will to answer human-5: "Email \"2026-10 Fall launch\" from Figma frame \"2026-10 Fall launch\" is ready for braze.\nSubject: Meet the fall lineup\nPreheader: Three new ways to work together, live today.\n8 blocks: 4 from library components, 4 mapped by the model from non-library layers. 8KB HTML.\nPreview: /Users/will/Projects/AgentWorkforce/nxt-humans-flows/out/2026-10-fall-launch/email.html (plain text: email.txt, blocks: spec.json).\nUpload /Users/will/Projects/AgentWorkforce/nxt-humans-flows/out/2026-10-fall-launch/images/ (2 file(s)) to https://cdn.nxthumans.example.com/email/fall before sending.\nDeploy it to braze?"
+Answer with: flows answer --data-dir .relayflowd 01M388A2XFCSV169DGFRAARQ3P human-5 yes|no
+Then continue with: flows resume --data-dir .relayflowd --local-agent 01M388A2XFCSV169DGFRAARQ3P
+RUN 01M388A2XFCSV169DGFRAARQ3P parked
+exit 3
+npm notice run npx
+npm notice run 'flows' answer --data-dir .relayflowd 01M388A2XFCSV169DGFRAARQ3P human-5 no --by will
+ANSWERED 01M388A2XFCSV169DGFRAARQ3P human-5 no
+Continue with: flows resume --data-dir .relayflowd --local-agent 01M388A2XFCSV169DGFRAARQ3P
+exit 0
+npm notice run npx
+npm notice run 'flows' resume --no-observer-link --data-dir .relayflowd --local-agent 01M388A2XFCSV169DGFRAARQ3P
+○ run-1 (deterministic) 0.00s
+✓ run-1 (deterministic) 0.01s completionReason: success
+○ run-2 (deterministic) 0.00s
+✓ run-2 (deterministic) 0.01s completionReason: success
+○ llm-3 (llm) 0.00s
+✓ llm-3 (llm) 2.91s completionReason: success
+○ run-4 (deterministic) 0.00s
+✓ run-4 (deterministic) 0.01s completionReason: success
+○ human-5 (deterministic) 0.00s
+✓ human-5 (deterministic) 0.02s completionReason: success
+DECLINED [run_declined] Flow deliberately chose not to act on this input.
+RUN 01M388A2XFCSV169DGFRAARQ3P completed (6 steps) completionReason: success
+exit 0
