@@ -11,8 +11,12 @@
 | 3 | System | Maps every design-library instance (`Email/Hero`, `Email/Button`, …) to its approved React Email component |
 | 4 | Model | Maps any other layer (detached instances, loose text) onto approved components only; each answer is schema-checked and sent back with findings until it passes (3 tries) |
 | 5 | System | Renders through the approved components; checks size (Gmail clips at 102KB), alt text, https links, unsubscribe link |
-| 6 | **You** | Review `out/<name>/email.html` and approve |
-| 7 | System | Creates the template, or updates the one with the same name |
+| 6 | Judges | Score the email against three rubrics (`lib/evals.ts`): copy matches Figma, on brand, accessible |
+| 7 | Classifier | Routes it: `auto-deploy` when every judge passed clean and all content came from library components, else `alert-human` |
+| 8 | **You** | Only on `alert-human`: review `out/<name>/email.html` with the judges' findings, and approve |
+| 9 | System | Creates the template, or updates the one with the same name |
+
+Judge and classifier steps (`f.judge`, `f.classify`) arrive in the next relayflows release; `lib/next-surface.ts` declares them so the flow typechecks today. Until then a run completes steps 1–5 and stops at step 6 with `f.judge is not a function`.
 
 ### The component library
 
@@ -62,7 +66,7 @@ npx flows run figma-to-email.flow.ts --local-agent --input '{
 
 `figmaNodeId` is the `node-id` of the email's top-level frame in the Figma URL. `name` is the template name on the platform. `subject` and `preheader` override the `Email/Meta` layer.
 
-At step 6 the run parks and prints the preview path plus two commands: `npx flows answer … yes` (or `no`) and `npx flows resume …`. Nothing is deployed until you answer yes. Deploy refuses if `email.html` changed after you approved it.
+When the classifier alerts you, the run parks and prints the preview path plus two commands: `npx flows answer … yes` (or `no`) and `npx flows resume …`. Nothing is deployed until you answer yes. Deploy refuses if `email.html` changed after you approved it.
 
 **Credentials are read by the local `relayflowd` daemon, which keeps the environment it started with.** After exporting new credentials, stop it with `pkill -f 'relayflowd --data-dir'`; the next run starts a fresh one. Step 1 refuses up front if any credential is missing.
 
@@ -82,7 +86,7 @@ export FIGMA_API_URL=http://localhost:4010 FIGMA_TOKEN=fake-figma \
 npx flows run figma-to-email.flow.ts --local-agent --input '{"figmaFileKey":"FALLKEY","figmaNodeId":"12-34","name":"2026-10 Fall launch","target":"sfmc","imageBaseUrl":"https://cdn.example.com/fall","reviewer":"you"}'
 ```
 
-Recorded runs are in `evidence/run/`: Braze create and update, SFMC create and update, a declined review, the missing-credential refusal, and a preview screenshot.
+Recorded runs in `evidence/run/` predate the judge and classifier steps. They cover Braze create and update, SFMC create and update, a declined review, the missing-credential refusal, and a preview screenshot.
 
 ### Develop
 
