@@ -66,7 +66,7 @@ npx flows run figma-to-email.flow.ts --local-agent --input '{
 
 `figmaNodeId` is the `node-id` of the email's top-level frame in the Figma URL. `name` is the template name on the platform. `subject` and `preheader` override the `Email/Meta` layer.
 
-When the classifier alerts you, the run parks and prints the preview path plus two commands: `npx flows answer … yes` (or `no`) and `npx flows resume …`. Nothing is deployed until you answer yes. Deploy refuses if `email.html` changed after you approved it.
+When the classifier alerts you, the run parks and prints the preview path plus two commands: `npx flows answer … yes` (or `no`) and `npx flows resume …`. Once alerted, nothing is deployed until you answer yes. Deploy refuses if `email.html` changed after you approved it.
 
 **Credentials are read by the local `relayflowd` daemon, which keeps the environment it started with.** After exporting new credentials, stop it with `pkill -f 'relayflowd --data-dir'`; the next run starts a fresh one. Step 1 refuses up front if any credential is missing.
 
