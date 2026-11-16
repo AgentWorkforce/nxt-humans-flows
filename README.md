@@ -2,7 +2,7 @@
 
 ## Figma → React Email → Braze / Salesforce Marketing Cloud
 
-`figma-to-email.flow.ts` turns one email frame in Figma into a template on your send platform.
+Turn a Figma email design into a template for Braze or Salesforce Marketing Cloud, using approved components and quality checks. The workflow asks a person to review cases that need judgment.
 
 | Step | Who | What happens |
 |---|---|---|
